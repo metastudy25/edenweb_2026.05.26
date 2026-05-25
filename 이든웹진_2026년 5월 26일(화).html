@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💎 이든웹진 2026년 5월 26일 호</title>
+<style>
+  body {
+    font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f6f9;
+  }
+  .magazine-container {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  h1.cover-title {
+    color: #1a5276;
+    border-bottom: 3px solid #1a5276;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 2.4em;
+    margin-bottom: 5px;
+    letter-spacing: -1px;
+  }
+  .publish-date {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.95em;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  h2.section-title {
+    color: #2980b9;
+    margin-top: 45px;
+    border-left: 5px solid #2980b9;
+    padding-left: 12px;
+    font-size: 1.55em;
+    letter-spacing: -0.5px;
+  }
+  
+  /* 수정된 D-Day 배너 스타일 (녹색 계열 배경) */
+  .d-day-banner {
+    background: linear-gradient(145deg, #27ae60, #2ecc71);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.2);
+    border: 1px solid #27ae60;
+  }
+  .d-day-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .d-day-box {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 15px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 150px;
+  }
+  .d-day-label {
+    display: block;
+    color: #e8f8f5;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .d-day-value {
+    display: block;
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+  .d-day-text {
+    color: #e8f8f5;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-top: 15px;
+  }
+  .d-day-text strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .quote-box {
+    border-left: 4px solid #f39c12;
+    background: #fef9e7;
+    padding: 18px 20px;
+    margin: 20px 0;
+    font-size: 1.05em;
+    border-radius: 0 8px 8px 0;
+    color: #34495e;
+  }
+  .content-section {
+    margin-bottom: 45px;
+  }
+  
+  /* 영어 직독직해 스타일 */
+  .english-block {
+    background: #f8f9fa;
+    padding: 18px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #3498db;
+  }
+  .english-block p {
+    margin: 6px 0;
+    font-size: 1.05em;
+  }
+  .source-text {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+  }
+  .instruction-banner {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 0.95em;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+  }
+  .interactive-wrapper {
+    background: #f8f9fa;
+    border: 1px solid #d5dbdb;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+  .interactive-chunk {
+    padding: 15px 20px;
+    border-bottom: 1px dashed #d5dbdb;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .interactive-chunk:hover {
+    background-color: #eaf2f8;
+  }
+  .interactive-chunk:last-child {
+    border-bottom: none;
+  }
+  .interactive-chunk p.eng {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  .interactive-chunk p.kor {
+    margin: 8px 0 0 0;
+    font-size: 1em;
+    color: #16a085;
+    font-weight: bold;
+    display: none;
+  }
+  
+  /* 영어 단어장 스타일 */
+  .vocab-list {
+    background: #ffffff;
+    border: 1px solid #d5dbdb;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  }
+  .vocab-instruction {
+    background-color: #9b59b6;
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .interactive-vocab {
+    background: #fdfefe;
+    border: 1px solid #e5e8e8;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .interactive-vocab:hover {
+    background-color: #f5b041;
+    border-color: #f39c12;
+    color: #fff;
+  }
+  .eng-word {
+    font-weight: bold;
+    font-size: 1.05em;
+  }
+  .kor-meaning {
+    color: #c0392b;
+    font-weight: bold;
+    display: none;
+  }
+  .interactive-vocab.active {
+    background-color: #fef9e7;
+    border-color: #f39c12;
+  }
+  .interactive-vocab.active .eng-word {
+    color: #d35400;
+  }
+  
+  /* 한국사 퀴즈 스타일 */
+  .quiz-box {
+    background: #eef7f2;
+    border: 1px solid #2ecc71;
+    padding: 22px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  .quiz-options {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+  }
+  .quiz-options li {
+    background: #fff;
+    border: 1px solid #bdc3c7;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .quiz-options li:hover {
+    background: #f4f6f7;
+    border-color: #95a5a6;
+  }
+  .quiz-correct {
+    background-color: #d5f5e3 !important;
+    border-color: #2ecc71 !important;
+    color: #1e8449 !important;
+  }
+  .quiz-wrong {
+    background-color: #fdedec !important;
+    border-color: #e74c3c !important;
+    color: #c0392b !important;
+    text-decoration: line-through;
+  }
+  #quiz-feedback {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  /* 한국사 용어사전 스타일 */
+  .history-terms {
+    background: #fdf2e9;
+    border: 1px solid #e67e22;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+  }
+  .history-terms h4 {
+    margin-top: 0;
+    color: #d35400;
+    border-bottom: 2px solid #edbb99;
+    padding-bottom: 10px;
+  }
+  .interactive-term {
+    background: #fff;
+    border: 1px solid #edbb99;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .interactive-term:hover {
+    background: #fcf3cf;
+  }
+  .term-title {
+    font-weight: bold;
+    color: #b9770e;
+    font-size: 1.05em;
+    display: block;
+  }
+  .term-desc {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #fad7a1;
+    color: #34495e;
+    display: none;
+    font-size: 0.95em;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.95em;
+    color: #34495e;
+    background: #eaeded;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 60px;
+    border-top: 3px solid #bdc3c7;
+  }
+  .footer strong {
+    color: #2c3e50;
+    font-size: 1.2em;
+  }
+</style>
+</head>
+<body>
+
+<div class="magazine-container">
+  
+  <h1 class="cover-title">💎 이든웹진 (Eden Webzine)</h1>
+  <div class="publish-date">발행일자: 2026년 5월 26일 화요일</div>
+
+  <div class="d-day-banner">
+    <div class="d-day-wrapper">
+      <div class="d-day-box">
+        <span class="d-day-label">대수능</span>
+        <span class="d-day-value">D-177</span>
+      </div>
+      <div class="d-day-box">
+        <span class="d-day-label">1학기 기말고사</span>
+        <span class="d-day-value">D-30</span>
+      </div>
+    </div>
+    <div class="d-day-text">
+      수능 6개월 미만, 기말고사 한 달 전.<br>
+      <strong>전략적인 밸런스와 효율적인 플랜으로 흔들림 없이 나아가야 할 때입니다.</strong>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-title">✍️ Editor's Message</h2>
+    <p>안녕하세요! 흔들림 없는 목표 달성의 페이스메이커, <strong>이든관리형학습센터</strong>입니다.</p>
+    <p>어제 부처님 오신 날 대체휴일은 다들 어떻게 보내셨나요? 쉴 틈 없이 달려온 일상 속에서 모처럼 달콤한 휴식을 취하며 방전된 체력을 든든하게 충전한 학생도 있을 것이고, 평소 미루어 두었던 취약 과목을 집중적으로 파고들며 뿌듯한 성취감을 맛본 집중 학습의 시간을 가진 학생도 있을 것입니다.</p>
+    <p>휴식으로 마음의 여유를 찾았든, 집중 학습으로 실력을 한 뼘 더 키웠든, 여러분이 보낸 어제의 시간은 모두 앞으로 다가올 기말고사와 수능을 위한 값진 자양분이 되었을 것입니다. 자, 이제 재충전된 에너지를 바탕으로 기말고사 D-30 카운트다운을 힘차게 시작해 봅시다!</p>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-title">💡 오늘의 기획 기사 : 기적을 만드는 3분의 마법</h2>
+    <p>기말고사가 딱 한 달 남은 지금, 새로운 지식을 머릿속에 밀어 넣는 것만큼이나 중요한 것은 <strong>'배운 것을 어떻게 온전히 내 것으로 남길 것인가'</strong>입니다. 학습과학에 따르면, 입력 중심으로 공부하는 것보다 공부한 내용을 스스로 '인출(회상)'하는 방식으로 학습할 때 기억 회상률이 훨씬 더 높습니다. 시간을 200% 활용하는 최적의 인출 학습법을 제안합니다.</p>
+    
+    <div class="quote-box">
+      <strong>[오늘의 학습법] 쉬는 시간 3분 복습법 (Immediate Review)</strong><br><br>
+      망각이 가장 급격하게 일어나는 수업 직후의 쉬는 시간 3~5분을 활용해 방금 배운 핵심 내용을 빠르게 상기하는 방법입니다. 이 짧은 시간의 즉각적인 인출만으로도 배운 지식이 휘발되는 것을 크게 막고 기억 소실률을 극적으로 낮출 수 있습니다.
+    </div>
+
+    <p>수업 종이 치자마자 책을 덮고 자리에서 일어나는 대신, 눈을 감고 방금 선생님이 강조하신 <strong>핵심 키워드 3가지</strong>를 백지에 적어보거나 머릿속으로 떠올려보세요. 기억해 둔 어떤 정보를 애써 회상하려는 인지적 노력이 더해지면, 이는 장기기억 속의 정보를 재구조화하여 기억을 더 단단하게 응고화해 줍니다. 인출 연습이 더 어려우면 어려울수록 장기기억에 저장하는 것이 그만큼 더 효과적이게 된다는 사실을 잊지 마세요! 오늘부터 수업 후 단 3분, 이 작지만 강력한 마법을 꼭 실천해 보시길 바랍니다.</p>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-title">📖 1일 1문장 직독직해 연습하기</h2>
+    <p>미사이든학원의 탄탄한 커리큘럼 노하우를 담아 매일 수능 기출 1문장을 완벽하게 부숴봅시다! 복잡하고 긴 문장도 의미 단위(Chunk)로 끊어서 읽으면 해석의 속도와 정확도가 놀라울 정도로 올라갑니다.</p>
+
+    <div class="english-block">
+      <div class="source-text">📝 <strong>출처:</strong> 2011학년도 3월 고3 전국연합학력평가 외국어영역 3번</div>
+      <p><strong>[원문]</strong></p>
+      <p>Of course, people do marry people of other races, but their relationships tend to be based on other important similarities such as values and education.</p>
+      <br>
+      <p><strong>[의미 단위 끊어 읽기]</strong></p>
+      <p>Of course, / people do marry / people of other races, / but their relationships tend to be based / on other important similarities / such as values and education.</p>
+    </div>
+
+    <div class="instruction-banner">👆 아래의 영어 문장(의미 단위)을 클릭하면 직독직해 해석이 나타납니다!</div>
+    <div class="interactive-wrapper">
+      <div class="interactive-chunk">
+        <p class="eng">Of course,</p>
+        <p class="kor">물론,</p>
+      </div>
+      <div class="interactive-chunk">
+        <p class="eng">people do marry</p>
+        <p class="kor">사람들은 실제로 결혼하기도 한다,</p>
+      </div>
+      <div class="interactive-chunk">
+        <p class="eng">people of other races,</p>
+        <p class="kor">다른 인종의 사람들과,</p>
+      </div>
+      <div class="interactive-chunk">
+        <p class="eng">but their relationships tend to be based</p>
+        <p class="kor">하지만 그들의 관계는 기초하는 경향이 있다</p>
+      </div>
+      <div class="interactive-chunk">
+        <p class="eng">on other important similarities</p>
+        <p class="kor">다른 중요한 유사성들에</p>
+      </div>
+      <div class="interactive-chunk">
+        <p class="eng">such as values and education.</p>
+        <p class="kor">가치관이나 교육과 같은.</p>
+      </div>
+    </div>
+
+    <div class="vocab-list">
+      <div class="vocab-instruction">👆 아래의 영어 단어를 클릭하면 뜻이 나타납니다!</div>
+      <div class="vocab-grid">
+        <div class="interactive-vocab">
+          <span class="eng-word">of course</span>
+          <span class="kor-meaning">물론</span>
+        </div>
+        <div class="interactive-vocab">
+          <span class="eng-word">marry</span>
+          <span class="kor-meaning">결혼하다</span>
+        </div>
+        <div class="interactive-vocab">
+          <span class="eng-word">race</span>
+          <span class="kor-meaning">인종, 종족</span>
+        </div>
+        <div class="interactive-vocab">
+          <span class="eng-word">relationship</span>
+          <span class="kor-meaning">관계</span>
+        </div>
+        <div class="interactive-vocab">
+          <span class="eng-word">tend to-v</span>
+          <span class="kor-meaning">~하는 경향이 있다</span>
+        </div>
+        <div class="interactive-vocab">
+          <span class="eng-word">be based on</span>
+          <span class="kor-meaning">~에 기초(기반)하다</span>
+        </div>
+        <div class="interactive-vocab">
+          <span class="eng-word">similarity</span>
+          <span class="kor-meaning">유사성, 닮은 점</span>
+        </div>
+        <div class="interactive-vocab">
+          <span class="eng-word">such as</span>
+          <span class="kor-meaning">~와 같은</span>
+        </div>
+        <div class="interactive-vocab">
+          <span class="eng-word">value</span>
+          <span class="kor-meaning">가치, 가치관</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-title">⏳ 한국사 1일 1제 : 수능 출제 0순위 완벽 정복</h2>
+    <p>시간에 쫓기는 수험생들을 위해, 모의고사와 수능에서 빈출되는 핵심 테마만 쏙쏙 뽑았습니다. 오늘 완벽히 내 것으로 만들 주제는 <strong>'조선 후기 상품 화폐 경제의 발달'</strong>입니다.</p>
+
+    <div class="quiz-box">
+      <strong>[오늘의 기출 지식 탐구]</strong><br>
+      <p>조선 후기에는 농업 생산력의 증대와 대동법 시행에 따른 공인의 활동 등으로 상업이 발달하였습니다. 허생전에서 허생이 과일을 매점매석(독점)하여 큰 돈을 벌 수 있었던 배경이나, 도시에 채소를 내다 파는 농민들의 모습은 모두 이 시기에 나타난 <strong>상품 화폐 경제의 발달</strong>을 보여주는 중요한 사례입니다.</p>
+      
+      <hr style="border: 0; border-top: 1px dashed #2ecc71; margin: 18px 0;">
+      
+      <strong>👆 [실전 퀴즈] 다음 자료(허생전 등)를 활용한 탐구 주제로 가장 적절한 것을 골라 클릭해보세요! (출처: 2023학년도 6월 고2 전국연합학력평가 한국사 14번)</strong>
+      <ul class="quiz-options">
+        <li data-correct="false" data-explanation="지계 발급은 대한 제국 광무개혁 시기(근대)의 정책입니다.">1. 지계 발급의 배경</li>
+        <li data-correct="false" data-explanation="과전법은 고려 말 신진 사대부의 경제적 기반을 마련하기 위해 제정된 토지 제도입니다.">2. 과전법 제정의 결과</li>
+        <li data-correct="true" data-explanation="제시된 자료(허생의 독점적 상행위 등)는 조선 후기 상업의 발달과 상품 화폐 경제의 발달을 보여주는 대표적인 사료입니다.">3. 상품 화폐 경제의 발달</li>
+        <li data-correct="false" data-explanation="전시과 제도는 고려 시대의 토지 제도입니다.">4. 전시과 제도의 변천 내용</li>
+        <li data-correct="false" data-explanation="신라 촌락 문서(민정 문서)는 통일 신라 시대에 세금을 거두기 위해 작성되었습니다.">5. 신라 촌락 문서의 작성 목적</li>
+      </ul>
+      
+      <div id="quiz-feedback"></div>
+    </div>
+
+    <div class="history-terms">
+      <h4>💡 [쏙쏙 이해되는 역사 용어 사전]</h4>
+      <p style="font-size: 0.9em; color: #7f8c8d; margin-bottom: 15px;">선지에 나온 헷갈리는 용어들, 확실하게 알고 넘어가요! <strong>(클릭하면 뜻이 보입니다)</strong></p>
+      
+      <div class="interactive-term">
+        <span class="term-title">🔍 지계 발급</span>
+        <div class="term-desc">대한 제국(고종 황제) 시기에 국가가 토지 소유자에게 발급해 준 '근대적 토지 소유권 증명서'입니다. 오늘날의 부동산 등기부 등본과 같은 역할을 했어요!</div>
+      </div>
+      
+      <div class="interactive-term">
+        <span class="term-title">🔍 과전법</span>
+        <div class="term-desc">고려 말, 낡은 세력을 몰아내고 새롭게 등장한 신진 사대부들에게 월급 대신 '토지에서 세금을 거둘 권리(수조권)'를 나누어 준 제도입니다. 조선 건국의 경제적 바탕이 되었죠.</div>
+      </div>
+
+      <div class="interactive-term">
+        <span class="term-title">🔍 상품 화폐 경제</span>
+        <div class="term-desc">농산물이나 물건을 자기가 직접 쓰려고 만드는 게 아니라, <strong>시장에 내다 파기 위해(상품)</strong> 생산하고, 거래할 때 <strong>돈(화폐)</strong>을 적극적으로 사용하는 경제 모습을 말해요. (예: 조선 후기 상평통보의 유통)</div>
+      </div>
+
+      <div class="interactive-term">
+        <span class="term-title">🔍 전시과</span>
+        <div class="term-desc">고려 시대 공무원(관리)들에게 일한 대가로 나누어 주던 토지 제도입니다. 곡식을 거둘 수 있는 땅(전지)과 땔나무를 얻을 수 있는 산(시지)을 함께 주어서 '전시과'라고 불렀어요.</div>
+      </div>
+
+      <div class="interactive-term">
+        <span class="term-title">🔍 촌락 문서 (민정 문서)</span>
+        <div class="term-desc">통일 신라 시대에 촌주(마을 촌장)가 3년마다 마을의 인구수, 토지 면적, 소와 말의 수, 뽕나무 수까지 아주 꼼꼼하게 기록한 문서예요. 세금과 노동력을 걷기 위한 <strong>철저한 국가 장부</strong>였답니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>이든관리형학습센터 · 미사이든학원</strong><br>
+    황붕주 원장 및 교직원 일동<br><br>
+    📍 <strong>위치:</strong> 미사강변대로 80 그린프라자 7층<br>
+    📞 <strong>상담 및 문의:</strong> 010-8442-2817<br>
+    <p style="margin-top: 15px; font-size: 0.9em;">여러분의 흔들림 없는 멘탈과 확고한 목표 달성을 위해 이든이 늘 곁에서 함께 뜁니다.</p>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. 영어 직독직해 토글 로직
+    const chunks = document.querySelectorAll('.interactive-chunk');
+    chunks.forEach(function(chunk) {
+      chunk.addEventListener('click', function() {
+        const korText = this.querySelector('.kor');
+        if (korText.style.display === 'none' || korText.style.display === '') {
+          korText.style.display = 'block';
+          this.style.backgroundColor = '#eaf2f8';
+        } else {
+          korText.style.display = 'none';
+          this.style.backgroundColor = 'transparent';
+        }
+      });
+    });
+
+    // 2. 영어 단어장 토글 로직
+    const vocabs = document.querySelectorAll('.interactive-vocab');
+    vocabs.forEach(function(vocab) {
+      vocab.addEventListener('click', function() {
+        const meaning = this.querySelector('.kor-meaning');
+        if (meaning.style.display === 'none' || meaning.style.display === '') {
+          meaning.style.display = 'inline';
+          this.classList.add('active');
+        } else {
+          meaning.style.display = 'none';
+          this.classList.remove('active');
+        }
+      });
+    });
+
+    // 3. 한국사 퀴즈 정답 체크 로직
+    const quizOptions = document.querySelectorAll('.quiz-options li');
+    const feedback = document.getElementById('quiz-feedback');
+    
+    quizOptions.forEach(function(option) {
+      option.addEventListener('click', function() {
+        // 모든 옵션 초기화
+        quizOptions.forEach(opt => {
+          opt.classList.remove('quiz-correct', 'quiz-wrong');
+        });
+
+        // 클릭된 옵션 정보 가져오기
+        const isCorrect = this.getAttribute('data-correct') === 'true';
+        const explanation = this.getAttribute('data-explanation');
+
+        if (isCorrect) {
+          this.classList.add('quiz-correct');
+          feedback.style.display = 'block';
+          feedback.style.backgroundColor = '#e8f8f5';
+          feedback.style.border = '1px solid #1abc9c';
+          feedback.style.color = '#2c3e50';
+          feedback.innerHTML = `<strong>🎉 정답입니다!</strong><br><br><p style="margin:0;"><strong>[해설]</strong> ${explanation}</p>`;
+        } else {
+          this.classList.add('quiz-wrong');
+          feedback.style.display = 'block';
+          feedback.style.backgroundColor = '#fdedec';
+          feedback.style.border = '1px solid #e74c3c';
+          feedback.style.color = '#c0392b';
+          feedback.innerHTML = `<strong>❌ 오답입니다. 다시 한번 신중하게 지문을 읽고 골라보세요!</strong>`;
+        }
+      });
+    });
+
+    // 4. 한국사 용어 사전 토글 로직
+    const terms = document.querySelectorAll('.interactive-term');
+    terms.forEach(function(term) {
+      term.addEventListener('click', function() {
+        const desc = this.querySelector('.term-desc');
+        if (desc.style.display === 'none' || desc.style.display === '') {
+          desc.style.display = 'block';
+          this.style.backgroundColor = '#fcf3cf';
+        } else {
+          desc.style.display = 'none';
+          this.style.backgroundColor = '#fff';
+        }
+      });
+    });
+
+  });
+</script>
+
+</body>
+</html>
